@@ -1,8 +1,9 @@
 export class Student {
-    firstName!: string;
-    lastName: string;
-    age: number;
-    cnp: number;
-    grade: number;
+    id?: number;
+    firstName?: string;
+    lastName?: string;
+    age?: number;
+    cnp?: number;
+    grade?: number;
 
 }
