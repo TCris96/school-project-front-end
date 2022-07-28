@@ -8,7 +8,7 @@ export interface classroom{
     email: string
 }
 
-Injectable({
+@Injectable({
     providedIn: "root"
 })
 

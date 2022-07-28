@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ClassroomComponent } from './components/classroom/classroom.component';
 import { MatTableModule} from '@angular/material/table'
 import { HttpClientModule} from '@angular/common/http'
+import { WebService } from './web.service';
 
 const routes: Routes = [
   {path: 'students' ,component: StudentComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     StudentComponent,
-    HeaderComponent
+    HeaderComponent, 
+    ClassroomComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ const routes: Routes = [
     MatTableModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Student } from 'src/app/common/student';
+import { StudentService } from 'src/app/services/student.service';
 import { classroom, WebService } from 'src/app/web.service';
 
 @Component({
@@ -8,15 +11,26 @@ import { classroom, WebService } from 'src/app/web.service';
 })
 export class ClassroomComponent implements OnInit {
 
+  students:Student[] = [];
   data:classroom[]=[];
-  columnsToDisplay = ['id', 'name', 'email']
+  displayedColumns = ['id', 'name', 'email'];
 
-  constructor(private web: WebService) { 
-    this.web.GetClassroom()
-    console.log(this.data)
+  constructor(private web: WebService, private studentService: StudentService) { 
+    this.web.GetClassroom().subscribe(x => {
+      x=this.data
+    })
   }
 
   ngOnInit(): void {
+    this.getStudents();
+    this.web.GetClassroom();
+  }
+
+  getStudents(){
+    this.studentService.getStudents().subscribe(response =>{
+      response = this.students
+    } 
+    )
   }
 
 }
