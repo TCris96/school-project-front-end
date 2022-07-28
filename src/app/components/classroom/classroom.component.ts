@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { classroom, WebService } from 'src/app/web.service';
 
 @Component({
   selector: 'app-classroom',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassroomComponent implements OnInit {
 
-  constructor() { }
+  data:classroom[]=[];
+  columnsToDisplay = ['id', 'name', 'email']
+
+  constructor(private web: WebService) { }
 
   ngOnInit(): void {
   }

@@ -4,9 +4,12 @@ import {RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { StudentComponent } from './components/student/student.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ClassroomComponent } from './components/classroom/classroom.component';
+import { MatTableModule} from '@angular/material/table'
 
 const routes: Routes = [
-  {path: 'students' ,component: StudentComponent}
+  {path: 'students' ,component: StudentComponent},
+  {path: 'classroom' ,component: ClassroomComponent}
 ];
 
 @NgModule({
@@ -17,7 +20,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
