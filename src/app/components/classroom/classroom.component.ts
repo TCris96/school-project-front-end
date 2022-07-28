@@ -11,7 +11,10 @@ export class ClassroomComponent implements OnInit {
   data:classroom[]=[];
   columnsToDisplay = ['id', 'name', 'email']
 
-  constructor(private web: WebService) { }
+  constructor(private web: WebService) { 
+    this.web.GetClassroom()
+    console.log(this.data)
+  }
 
   ngOnInit(): void {
   }
